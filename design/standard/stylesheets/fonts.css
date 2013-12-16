@@ -1,0 +1,45 @@
+/*
+    The New Bulletproof @Font-Face Syntax
+    http://www.fontspring.com/blog/the-new-bulletproof-font-face-syntax
+*/
+@font-face {
+   font-family: Antenna-Black;
+   src: url('/extension/molimage/design/np/stylesheets/fonts/Antenna-Black.otf') format('opentype'),
+        url('/extension/molimage/design/np/stylesheets/fonts/Antenna-Black.eot?#iefix') format('embedded-opentype'),
+        url('/extension/molimage/design/np/stylesheets/fonts/Antenna-Black.woff') format('woff');
+}
+@font-face {
+   font-family: AntennaCond-Black;
+   src: url('/extension/molimage/design/np/stylesheets/fonts/AntennaCond-Black.otf') format('opentype'),
+        url('/extension/molimage/design/np/stylesheets/fonts/AntennaCond-Black.eot?#iefix') format('embedded-opentype'),
+        url('/extension/molimage/design/np/stylesheets/fonts/AntennaCond-Black.woff') format('woff');
+}
+@font-face {
+   font-family: AntennaCond;
+   src: url('/extension/molimage/design/np/stylesheets/fonts/AntennaCond-Regular.otf') format('opentype'),
+        url('/extension/molimage/design/np/stylesheets/fonts/AntennaCond-Regular.eot?#iefix') format('embedded-opentype'),
+        url('/extension/molimage/design/np/stylesheets/fonts/AntennaCond-Regular.woff') format('woff');
+   font-weight:normal;
+}
+@font-face {
+   font-family: AntennaCond-Bold;
+   src: url('/extension/molimage/design/np/stylesheets/fonts/AntennaCond-Bold.otf') format('opentype'),
+        url('/extension/molimage/design/np/stylesheets/fonts/AntennaCond-Bold.eot?#iefix') format('embedded-opentype'),
+        url('/extension/molimage/design/np/stylesheets/fonts/AntennaCond-Bold.woff') format('woff');
+   font-weight:bold;
+}
+@font-face {
+   font-family: ReceiverBetaCond;
+   src: url('/extension/molimage/design/np/stylesheets/fonts/ReceiverBetaCond-Bold.otf') format('opentype'),
+        url('/extension/molimage/design/np/stylesheets/fonts/ReceiverBetaCond-Bold.eot?#iefix') format('embedded-opentype'),
+        url('/extension/molimage/design/np/stylesheets/fonts/ReceiverBetaCond-Bold.woff') format('woff');
+   font-weight:bold;
+}
+
+@font-face {
+   font-family: AntennaExtraCond;
+   src: url('/extension/molimage/design/np/stylesheets/fonts/AntennaExtraCond-Bold.otf') format('opentype'),
+        url('/extension/molimage/design/np/stylesheets/fonts/AntennaExtraCond-Bold.eot?#iefix') format('embedded-opentype'),
+        url('/extension/molimage/design/np/stylesheets/fonts/AntennaExtraCond-Bold.woff') format('woff');
+   font-weight:bold;
+}

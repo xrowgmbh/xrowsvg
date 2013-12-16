@@ -1,0 +1,256 @@
+Index: extensions/ext-closepath.js
+===================================================================
+--- extensions/ext-closepath.js	(revision 2084)
++++ extensions/ext-closepath.js	(working copy)
+@@ -45,7 +45,7 @@
+ 		
+ 		return {
+ 			name: "ClosePath",
+-			svgicons: "extensions/closepath_icons.svg",
++			svgicons: "/extension/xrowsvg/design/standard/javascript/svg-edit/extensions/closepath_icons.svg",
+ 			buttons: [{
+ 				id: "tool_openpath",
+ 				type: "context",
+Index: extensions/ext-connector.js
+===================================================================
+--- extensions/ext-connector.js	(revision 2084)
++++ extensions/ext-connector.js	(working copy)
+@@ -299,11 +299,11 @@
+ 	
+ 	return {
+ 		name: "Connector",
+-		svgicons: "images/conn.svg",
++		svgicons: "/extension/xrowsvg/design/standard/javascript/svg-edit/images/conn.svg",
+ 		buttons: [{
+ 			id: "mode_connect",
+ 			type: "mode",
+-			icon: "images/cut.png",
++			icon: "/extension/xrowsvg/design/standard/javascript/svg-edit/images/cut.png",
+ 			title: "Connect two objects",
+ 			includeWith: {
+ 				button: '#tool_line',
+Index: extensions/ext-eyedropper.js
+===================================================================
+--- extensions/ext-eyedropper.js	(revision 2084)
++++ extensions/ext-eyedropper.js	(working copy)
+@@ -61,7 +61,9 @@
+ 		
+ 		return {
+ 			name: "eyedropper",
+-			svgicons: "extensions/eyedropper-icon.xml",
++			/** HACK Madsack START **/
++			svgicons: "/extension/xrowsvg/design/standard/javascript/svg-edit/extensions/eyedropper-icon.xml",
++			/** HACK Madsack END **/
+ 			buttons: [{
+ 				id: "tool_eyedropper",
+ 				type: "mode",
+Index: extensions/ext-foreignobject.js
+===================================================================
+--- extensions/ext-foreignobject.js	(revision 2084)
++++ extensions/ext-foreignobject.js	(working copy)
+@@ -95,7 +95,7 @@
+ 		
+ 		return {
+ 			name: "foreignObject",
+-			svgicons: "extensions/foreignobject-icons.xml",
++			svgicons: "/extension/xrowsvg/design/standard/javascript/svg-edit/extensions/foreignobject-icons.xml",
+ 			buttons: [{
+ 				id: "tool_foreign",
+ 				type: "mode",
+Index: extensions/ext-grid.js
+===================================================================
+--- extensions/ext-grid.js	(revision 2084)
++++ extensions/ext-grid.js	(working copy)
+@@ -151,7 +151,7 @@
+ 
+     return {
+         name: "view_grid",
+-        svgicons: "extensions/grid-icon.xml",
++        svgicons: "/extension/xrowsvg/design/standard/javascript/svg-edit/extensions/grid-icon.xml",
+ 
+         zoomChanged: function(zoom) {
+             // update size
+Index: extensions/ext-helloworld.js
+===================================================================
+--- extensions/ext-helloworld.js	(revision 2084)
++++ extensions/ext-helloworld.js	(working copy)
+@@ -19,7 +19,7 @@
+ 			name: "Hello World",
+ 			// For more notes on how to make an icon file, see the source of
+ 			// the hellorworld-icon.xml
+-			svgicons: "extensions/helloworld-icon.xml",
++			svgicons: "/extension/xrowsvg/design/standard/javascript/svg-edit/extensions/helloworld-icon.xml",
+ 			
+ 			// Multiple buttons can be added in this array
+ 			buttons: [{
+Index: extensions/ext-imagelib.js
+===================================================================
+--- extensions/ext-imagelib.js	(revision 2084)
++++ extensions/ext-imagelib.js	(working copy)
+@@ -350,7 +350,7 @@
+ 	}
+ 	
+ 	return {
+-		svgicons: "extensions/ext-imagelib.xml",
++		svgicons: "/extension/xrowsvg/design/standard/javascript/svg-edit/extensions/ext-imagelib.xml",
+ 		buttons: [{
+ 			id: "tool_imagelib",
+ 			type: "app_menu", // _flyout
+Index: extensions/ext-markers.js
+===================================================================
+--- extensions/ext-markers.js	(revision 2084)
++++ extensions/ext-markers.js	(working copy)
+@@ -475,7 +475,7 @@
+ 
+ 	return {
+ 		name: "Markers",
+-		svgicons: "extensions/markers-icons.xml",
++		svgicons: "/extension/xrowsvg/design/standard/javascript/svg-edit/extensions/markers-icons.xml",
+ 		buttons: buildButtonList(),
+ 		context_tools: [
+ 		   {
+Index: extensions/ext-shapes.js
+===================================================================
+--- extensions/ext-shapes.js	(revision 2084)
++++ extensions/ext-shapes.js	(working copy)
+@@ -147,7 +147,7 @@
+ 
+ 	
+ 	return {
+-		svgicons: "extensions/ext-shapes.xml",
++		svgicons: "/extension/xrowsvg/design/standard/javascript/svg-edit/extensions/ext-shapes.xml",
+ 		buttons: [{
+ 			id: "tool_shapelib",
+ 			type: "mode_flyout", // _flyout
+Index: jgraduate/jquery.jgraduate.js
+===================================================================
+--- jgraduate/jquery.jgraduate.js	(revision 2084)
++++ jgraduate/jquery.jgraduate.js	(working copy)
+@@ -121,7 +121,9 @@
+ 		pickerTitle: "Drag markers to pick a paint"
+ 	},
+ 	images: {
+-		clientPath: "images/"
++		/** HACK Madsack: added path /extension/xrowsvg/design/standard/javascript/svg-edit/ START **/
++		clientPath: "/extension/xrowsvg/design/standard/javascript/svg-edit/images/"
++		/** HACK Madsack: added path /extension/xrowsvg/design/standard/javascript/svg-edit/ END **/
+ 	},
+ 	newstop: 'inverse' // same, inverse, black, white
+ };
+Index: jgraduate/jquery.jgraduate.min.js
+===================================================================
+--- jgraduate/jquery.jgraduate.min.js	(revision 2084)
++++ jgraduate/jquery.jgraduate.min.js	(working copy)
+@@ -1,6 +1,6 @@
+ ﻿(function(){function r(i,z,t){i=document.createElementNS(A.svg,i);if(Ba)for(var B in z)i.setAttribute(B,z[B]);else for(B in z){var W=z[B],w=i[B];if(w&&w.constructor==="SVGLength")w.baseVal.value=W;else i.setAttribute(B,W)}t&&t.appendChild(i);return i}var A={svg:"http://www.w3.org/2000/svg",xlink:"http://www.w3.org/1999/xlink"};if(!window.console)window.console=new function(){this.log=function(){};this.dir=function(){}};$.jGraduate={Paint:function(i){i=i||{};this.alpha=isNaN(i.alpha)?100:i.alpha;if(i.copy){this.type=
+ i.copy.type;this.alpha=i.copy.alpha;this.radialGradient=this.linearGradient=this.solidColor=null;switch(this.type){case "solidColor":this.solidColor=i.copy.solidColor;break;case "linearGradient":this.linearGradient=i.copy.linearGradient.cloneNode(true);break;case "radialGradient":this.radialGradient=i.copy.radialGradient.cloneNode(true)}}else if(i.linearGradient){this.type="linearGradient";this.radialGradient=this.solidColor=null;this.linearGradient=i.linearGradient.cloneNode(true)}else if(i.radialGradient){this.type=
+-"radialGradient";this.linearGradient=this.solidColor=null;this.radialGradient=i.radialGradient.cloneNode(true)}else if(i.solidColor){this.type="solidColor";this.solidColor=i.solidColor}else{this.type="none";this.radialGradient=this.linearGradient=this.solidColor=null}}};jQuery.fn.jGraduateDefaults={paint:new $.jGraduate.Paint,window:{pickerTitle:"Drag markers to pick a paint"},images:{clientPath:"images/"},newstop:"inverse"};var Ba=navigator.userAgent.indexOf("Gecko/")>=0;jQuery.fn.jGraduate=function(i){var z=
++"radialGradient";this.linearGradient=this.solidColor=null;this.radialGradient=i.radialGradient.cloneNode(true)}else if(i.solidColor){this.type="solidColor";this.solidColor=i.solidColor}else{this.type="none";this.radialGradient=this.linearGradient=this.solidColor=null}}};jQuery.fn.jGraduateDefaults={paint:new $.jGraduate.Paint,window:{pickerTitle:"Drag markers to pick a paint"},images:{clientPath:/** HACK Madsack: added path /extension/xrowsvg/design/standard/javascript/svg-edit/ START **/"/extension/xrowsvg/design/standard/javascript/svg-edit/images/"/** HACK Madsack: added path /extension/xrowsvg/design/standard/javascript/svg-edit/ END **/},newstop:"inverse"};var Ba=navigator.userAgent.indexOf("Gecko/")>=0;jQuery.fn.jGraduate=function(i){var z=
+ arguments;return this.each(function(){function t(c,a,d,h,f){var l=f||r("stop",{"stop-color":a,"stop-opacity":d,offset:c},g);if(f){a=f.getAttribute("stop-color");d=f.getAttribute("stop-opacity");c=f.getAttribute("offset")}else g.appendChild(l);if(d===null)d=1;f=r("path",{d:"M-6.2,0.9c3.6-4,6.7-4.3,6.7-12.4c-0.2,7.9,3.1,8.8,6.5,12.4c3.5,3.8,2.9,9.6,0,12.3c-3.1,2.8-10.4,2.7-13.2,0C-9.6,9.9-9.4,4.4-6.2,0.9z",fill:"url(#jGraduate_trans)",transform:"translate("+(10+c*j)+", 26)"},fa);var X=r("path",{d:"M-6.2,0.9c3.6-4,6.7-4.3,6.7-12.4c-0.2,7.9,3.1,8.8,6.5,12.4c3.5,3.8,2.9,9.6,0,12.3c-3.1,2.8-10.4,2.7-13.2,0C-9.6,9.9-9.4,4.4-6.2,0.9z",
+ fill:a,"fill-opacity":d,transform:"translate("+(10+c*j)+", 26)",stroke:"#000","stroke-width":1.5},fa);$(X).mousedown(function(M){B(this);R=F;N.mousemove(la).mouseup(W);S=ga.offset();M.preventDefault();return false}).data("stop",l).data("bg",f).dblclick(function(){$("div.jGraduate_LightBox").show();for(var M=this,I=+l.getAttribute("stop-opacity")||1,C=l.getAttribute("stop-color")||1,Y=(parseFloat(I)*255).toString(16);Y.length<2;)Y="0"+Y;a=C.substr(1)+Y;$("#"+b+"_jGraduate_stopPicker").css({left:100,
+ bottom:15}).jPicker({window:{title:"Pick the start color and opacity for the gradient"},images:{clientPath:o.images.clientPath},color:{active:a,alphaSupport:true}},function(Z){C=Z.val("hex")?"#"+Z.val("hex"):"none";I=Z.val("a")!==null?Z.val("a")/256:1;M.setAttribute("fill",C);M.setAttribute("fill-opacity",I);l.setAttribute("stop-color",C);l.setAttribute("stop-opacity",I);$("div.jGraduate_LightBox").hide();$("#"+b+"_jGraduate_stopPicker").hide()},null,function(){$("div.jGraduate_LightBox").hide();
+Index: sanitize.js
+===================================================================
+--- sanitize.js	(revision 2084)
++++ sanitize.js	(working copy)
+@@ -53,7 +53,10 @@
+         "style" : ["type"],
+ 	"desc": [],
+ 	"ellipse": ["class", "clip-path", "clip-rule", "cx", "cy", "fill", "fill-opacity", "fill-rule", "filter", "id", "mask", "opacity", "requiredFeatures", "rx", "ry", "stroke", "stroke-dasharray", "stroke-dashoffset", "stroke-linecap", "stroke-linejoin", "stroke-miterlimit", "stroke-opacity", "stroke-width", "style", "systemLanguage", "transform"],
+-	"feGaussianBlur": ["class", "color-interpolation-filters", "id", "requiredFeatures", "stdDeviation"],
++	"feGaussianBlur": ["class", "color-interpolation-filters", "id", "requiredFeatures", "stdDeviation", "in"],
++	"feOffset": ["dx", "dy", "result"],
++	"feMerge": [],
++	"feMergeNode": ["in"],
+ 	"filter": ["class", "color-interpolation-filters", "filterRes", "filterUnits", "height", "id", "primitiveUnits", "requiredFeatures", "width", "x", "xlink:href", "y"],
+ 	"foreignObject": ["class", "font-size", "height", "id", "opacity", "requiredFeatures", "style", "transform", "width", "x", "y"],
+ 	"g": ["class", "clip-path", "clip-rule", "id", "display", "fill", "fill-opacity", "fill-rule", "filter", "mask", "opacity", "requiredFeatures", "stroke", "stroke-dasharray", "stroke-dashoffset", "stroke-linecap", "stroke-linejoin", "stroke-miterlimit", "stroke-opacity", "stroke-width", "style", "systemLanguage", "transform", "font-family", "font-size", "font-style", "font-weight", "text-anchor"],
+Index: svg-editor.js
+===================================================================
+--- svg-editor.js	(revision 2084)
++++ svg-editor.js	(working copy)
+@@ -21,9 +21,12 @@
+ 		var svgCanvas;
+ 		var Editor = {};
+ 		var is_ready = false;
++		var showSourceCounter = 0;
++		var textareaID = $('iframe.loadSVGEditor_xrowsvg', top.document).attr('id')+'tent';
++		var existing_content = $('textarea#'+textareaID, top.document).val();
+ 		
+ 		var defaultPrefs = {
+-			lang:'en',
++			lang:'de',
+ 			iconsize:'m',
+ 			bkgd_color:'#FFF',
+ 			bkgd_url:'',
+@@ -36,7 +39,7 @@
+ 			
+ 			curConfig = {
+ 				canvas_expansion: 3,
+-				dimensions: [640,480],
++				dimensions: [505,280],
+ 				initFill: {
+ 					color: 'FF0000',  // solid red
+ 					opacity: 1
+@@ -47,11 +50,12 @@
+ 					opacity: 1
+ 				},
+ 				initOpacity: 1,
+-				imgPath: 'images/',
+-				langPath: 'locale/',
+-				extPath: 'extensions/',
+-				jGraduatePath: 'jgraduate/images/',
+-				extensions: ['ext-markers.js','ext-connector.js', 'ext-eyedropper.js', 'ext-shapes.js', 'ext-imagelib.js','ext-grid.js'],
++				imgPath: '/extension/xrowsvg/design/standard/javascript/svg-edit/images/',
++				langPath: '/extension/xrowsvg/design/standard/javascript/svg-edit/locale/',
++				extPath: '/extension/xrowsvg/design/standard/javascript/svg-edit/extensions/',
++				jGraduatePath: '/extension/xrowsvg/design/standard/javascript/svg-edit/jgraduate/images/',
++				extensions: ['ext-shapes.js'],
++				/*extensions: ['ext-markers.js','ext-connector.js', 'ext-eyedropper.js', 'ext-shapes.js', 'ext-imagelib.js','ext-grid.js'],*/
+ 				initTool: 'select',
+ 				wireframe: false,
+ 				colorPickerCSS: null,
+@@ -274,6 +278,7 @@
+ 	// 			var lang = ('lang' in curPrefs) ? curPrefs.lang : null;
+ 				Editor.putLocale(null, good_langs);
+ 			}
++
+ 			
+ 			// Load extensions
+ 			// Bit of a hack to run extensions in local Opera/IE9
+@@ -557,6 +562,23 @@
+ 				$.confirm = function(msg, cb) {	dbox('confirm', msg, cb);};
+ 				$.process_cancel = function(msg, cb) {	dbox('process', msg, cb);};
+ 				$.prompt = function(msg, txt, cb) { dbox('prompt', msg, cb, txt);};
++				
++				if( $.trim(existing_content) != '' && showSourceCounter == 0 )
++				{
++					if (!svgCanvas.setSvgString($.trim(existing_content)))
++					{
++						alert('Text konnte nicht übernommen werden.');
++					}
++					showSourceCounter++;
++				}
++				var idFromAttributeArray = textareaID.split('_'),
++					idFromAttribute = idFromAttributeArray[1]
++					topDC = top.document;
++				$('body', topDC).delegate('a#mce_' + idFromAttribute + '_close', 'click', function(e) {
++					$('textarea#'+textareaID, topDC).val(svgCanvas.getSvgString());
++					$('#mceModalBlocker'+idFromAttribute, topDC).remove();
++					$('#mce_'+idFromAttribute, topDC).remove();
++				});
+ 			}());
+ 			
+ 			var setSelectMode = function() {
+@@ -2824,9 +2846,11 @@
+ 				if (!svgCanvas.setSvgString($('#svg_source_textarea').val())) {
+ 					$.confirm(uiStrings.notification.QerrorsRevertToSource, function(ok) {
+ 						if(!ok) return false;
++						$('textarea#'+textareaID, top.document).val($('#svg_source_textarea').val());
+ 						saveChanges();
+ 					});
+ 				} else {
++				    $('textarea#'+textareaID, top.document).val($('#svg_source_textarea').val());
+ 					saveChanges();
+ 				}
+ 				setSelectMode();		
