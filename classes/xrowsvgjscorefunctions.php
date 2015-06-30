@@ -24,6 +24,7 @@ class xrowSVGJscoreFunctions extends ezjscServerFunctions
 				{
                     $tpl->setVariable( 'attributeID', $http->postVariable( 'attributeID' ) );
                     $tpl->setVariable( 'image', $image );
+                    $tpl->setVariable( 'contentObject', $contentObject );
                     return $tpl->fetch( 'design:xrowsvg/' . $http->postVariable( 'templateID' ) . '.tpl' );
                 }
                 else
